@@ -6,6 +6,17 @@
 
 **Flag Protocol** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides national flag day information for supported countries. The integration dynamically shows when flags should be flown at full mast, half mast, or with a banner—based on official protocols—and also counts down to the next official flag day.
 
+The background of this integration is that I found I was not the only one looking sensors to tell me when to flag. Hence I decided to create a Dutch Flag Protocol integration. After short deliberation with a co-worker we came to the conclusion it made sense to create a more generic Flag Protocol integration with multi country support. 
+
+## Assumtions and choices
+Due to almost no countries having a public API for the flag protocol, the dates are hardcoded. Yet due to the setup with a separate file for each country it is still easy to maintain. 
+
+In general I have kept in mind that the flag should only be flown during daylight (expect for when well litt on both sides), as this is the case for most countries. There is however some flexibility to it with a set time instead of relying on `sun.sun` elevation.
+
+Election days are excluded, some countries will allow you to flag during election days (Belgium, Sweden), some don't (The Netherlands). However there is in general no logic to when it is election day.
+
+Dates and flag position should be confirmed by official government websites.
+
 ---
 
 ## ✨ Features
@@ -39,7 +50,7 @@
 
 ---
 
-## 🧱 Entities Created
+## Entities Created
 
 | Entity                                 | Description                                    |
 |----------------------------------------|------------------------------------------------|
@@ -57,3 +68,4 @@ entities:
     name: 🇧🇪 Today's Flag Status
   - entity: sensor.flag_protocol_next_countdown
     name: ⏳ Days Until Next Flag Day
+```

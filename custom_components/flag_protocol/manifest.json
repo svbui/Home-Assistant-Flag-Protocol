@@ -2,7 +2,7 @@
   "domain": "flag_protocol",
   "name": "Flag Protocol",
   "version": "0.1.0",
-  "documentation": "https://github.com/svbui/home-assistant-Flag-Protocol",
+  "documentation": "https://github.com/svbui/Home-Assistant-Flag-Protocol",
   "requirements": [],
   "dependencies": [],
   "codeowners": ["@svbui"],

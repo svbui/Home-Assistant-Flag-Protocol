@@ -69,3 +69,4 @@ class NextFlagCountdownSensor(SensorEntity):
         self._attr_extra_state_attributes = {
             "next_reason": next_reason,
             "next_flag_type": next_flag_type
+        }

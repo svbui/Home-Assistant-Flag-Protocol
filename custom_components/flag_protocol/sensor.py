@@ -8,7 +8,7 @@ import logging
 _LOGGER = logging.getLogger(__name__)
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback):
-    fns = hass.data["dutch_flag_protocol"][entry.entry_id]
+    fns = hass.data["flag_protocol"][entry.entry_id]
     async_add_entities([
         FlagProtocolSensor(hass, fns["get_flag_status"]),
         NextFlagCountdownSensor(hass, fns["get_next_flag_day"])

@@ -3,6 +3,8 @@ import voluptuous as vol
 from .const import DOMAIN, COUNTRIES
 
 class FlagProtocolConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+    """Config flow for Flag Protocol."""
+
     VERSION = 1
 
     async def async_step_user(self, user_input=None):
@@ -15,4 +17,7 @@ class FlagProtocolConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         schema = vol.Schema({
             vol.Required("country", default="nl"): vol.In(COUNTRIES)
         })
-        return self.async_show_form(step_id="user", data_schema=schema)
+        return self.async_show_form(
+            step_id="user",
+            data_schema=schema
+        )

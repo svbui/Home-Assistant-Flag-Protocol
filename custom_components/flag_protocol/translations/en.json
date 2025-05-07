@@ -1,0 +1,30 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setup Flag Protocol",
+        "description": "Select your country and confirm to add the integration."
+      }
+    },
+    "entry": {
+      "title": "Flag Protocol",
+      "description": "Sensor for national flag days."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "flag_protocol": {
+        "name": "Flag Protocol",
+        "state": {
+          "no_flag": "No flag day",
+          "full_mast": "Full mast",
+          "half_mast": "Half mast",
+          "full_mast_with_banner": "Full mast with pennant"
+        }
+      },
+      "flag_protocol_next_countdown": {
+        "name": "Next Flag Day Countdown"
+      }
+    }
+  }
+}

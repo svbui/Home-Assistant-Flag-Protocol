@@ -1,8 +1,8 @@
 # Flag Protocol integration for Home-Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz/)
-![License](https://img.shields.io/github/license/YOUR_GITHUB_USERNAME/flag_protocol)
-![Version](https://img.shields.io/github/v/release/YOUR_GITHUB_USERNAME/flag_protocol?include_prereleases&sort=semver)
+![License](https://img.shields.io/github/license/svbui/Home-Assistant-Flag-Protocol)
+![Version](https://img.shields.io/github/v/release/svbui/Home-Assistant-Flag-Protocol?include_prereleases&sort=semver)
 
 **Flag Protocol** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides national flag day information for supported countries. The integration dynamically shows when flags should be flown at full mast, half mast, or with a banner—based on official protocols—and also counts down to the next official flag day.
 

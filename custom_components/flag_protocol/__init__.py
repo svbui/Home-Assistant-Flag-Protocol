@@ -7,7 +7,7 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     return True
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    country = entry.data["country"]  # "nl" or "be" etc.
+    country = entry.data["country"]  # "nl", "be", or "se"
     module = importlib.import_module(f".flag_rules.{country}", package=__name__)
 
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {

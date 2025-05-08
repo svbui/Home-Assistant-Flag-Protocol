@@ -40,7 +40,7 @@ Dates and flag position should be confirmed by official government websites.
 1. Go to **HACS → Integrations**
 2. Click **⋮ → Custom repositories**
 3. Add this repo:  
-   `https://github.com//svbui/Home-Assistant-Flag-Protocol`  
+   `https://github.com/svbui/Home-Assistant-Flag-Protocol`  
    Type: `Integration`
 4. Install **Flag Protocol** from the list
 5. Restart Home Assistant

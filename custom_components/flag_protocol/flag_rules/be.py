@@ -1,26 +1,26 @@
 from datetime import datetime, timedelta
 
 def get_flag_status(now: datetime) -> tuple[str, str]:
-    # Belgian flag days
     fixed = [
         (1, 20, "full_mast", "Queen Mathilde’s Birthday"),
         (2, 17, "full_mast", "Royal Family Memorial"),
-        (4, 7, "full_mast", "Tribute to Fallen Peacekeepers"),
+        (4, 7,  "full_mast", "Tribute to Fallen Peacekeepers"),
         (4, 15, "full_mast", "King Philippe’s Birthday"),
-        (5, 1, "full_mast", "Labour Day"),
-        (5, 5, "full_mast", "Council of Europe Day"),
-        (5, 8, "full_mast", "Victory in Europe Day"),
-        (5, 9, "full_mast", "Europe Day"),
-        (6, 6, "full_mast", "King Albert II’s Birthday"),
-        (7, 2, "full_mast", "King Albert II Wedding Day"),
-        (7, 21, "full_mast", "Belgian National Day"),
-        (7, 22, "full_mast", "Belgian National Day"),
-        (7, 23, "full_mast", "Belgian National Day"),
+        (5, 1,  "full_mast", "Labour Day"),
+        (5, 5,  "full_mast", "Council of Europe Day"),
+        (5, 8,  "full_mast", "Victory in Europe Day"),
+        (5, 9,  "full_mast", "Europe Day"),
+        (6, 6,  "full_mast", "King Albert II’s Birthday"),
+        (7, 2,  "full_mast", "Royal Wedding Anniversary"),
+        # National Day: 21,22,23 July
+        (7, 21, "full_mast", "National Day"),
+        (7, 22, "full_mast", "National Day"),
+        (7, 23, "full_mast", "National Day"),
         (9, 11, "full_mast", "Queen Paola’s Birthday"),
-        (10, 24, "full_mast", "United Nations Day"),
-        (11, 11, "half_mast", "Armistice Day"),
-        (11, 15, "full_mast", "King’s Feast"),
-        (12, 4, "full_mast", "Royal Wedding Anniversary")
+        (10,24, "full_mast", "United Nations Day"),
+        (11,11, "half_mast","Armistice Day"),
+        (11,15, "full_mast","King’s Feast"),
+        (12,4,  "full_mast", "Royal Wedding Anniversary")
     ]
     for month, day, flag_type, reason in fixed:
         if now.month == month and now.day == day:

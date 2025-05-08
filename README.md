@@ -8,7 +8,7 @@
 
 The background of this integration is that I found I was not the only one looking sensors to tell me when to flag. Hence I decided to create a Dutch Flag Protocol integration. After short deliberation with a co-worker we came to the conclusion it made sense to create a more generic Flag Protocol integration with multi country support. 
 
-## Assumtions and choices
+## Assumptions and choices
 Due to almost no countries having a public API for the flag protocol, the dates are hardcoded. Yet due to the setup with a separate file for each country it is still easy to maintain. 
 
 In general I have kept in mind that the flag should only be flown during daylight (expect for when well litt on both sides), as this is the case for most countries. There is however some flexibility to it with a set time instead of relying on `sun.sun` elevation.

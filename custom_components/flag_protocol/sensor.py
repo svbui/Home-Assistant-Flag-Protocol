@@ -1,5 +1,4 @@
 from homeassistant.components.sensor import SensorEntity
-from datetime import timedelta
 from homeassistant.util import dt as dt_util
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.config_entries import ConfigEntry
@@ -70,17 +69,6 @@ class NextFlagCountdownSensor(SensorEntity):
         self._attr_extra_state_attributes = {}
 
     async def async_update(self):
-        now = dt_util.now()
-        days_until, next_reason, next_flag_type = self._fn_next(now)
-        # Calculate exact next flag date/time
-        next_dt = now + timedelta(days=days_until)
-
-        self._attr_native_value = days_until
-        self._attr_extra_state_attributes = {
-            "next_reason": next_reason,
-            "next_flag_type": next_flag_type,
-            "next_date_time": next_dt.isoformat()
-        }(self):
         now = dt_util.now()
         days_until, next_reason, next_flag_type = self._fn_next(now)
         self._attr_native_value = days_until

@@ -1,6 +1,9 @@
 DOMAIN = "flag_protocol"
-COUNTRIES = {
-    "nl": "Netherlands",
+COUNTRIES = {    
     "be": "Belgium",
+    "dk": "Denmark",
+    "fi": "Finland",
+    "nl": "Netherlands",
+    "no": "Norway",
     "se": "Sweden"
 }

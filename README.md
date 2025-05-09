@@ -53,9 +53,9 @@ Dates and flag position should be confirmed by official government websites.
 ## Entities Created
 
 | Entity                                 | Description                                    |
-|----------------------------------------|------------------------------------------------|
-| `sensor.flag_protocol`                | Shows today's flag type and reason             |
-| `sensor.flag_protocol_next_countdown` | Days remaining until the next flag day         |
+|-------------------------------------------------|------------------------------------------------|
+| `sensor.flag_protocol_<country>`                | Shows today's flag type and reason             |
+| `sensor.flag_protocol_next_countdown_<country>` | Days remaining until the next flag day         |
 
 ---
 
@@ -64,8 +64,15 @@ Dates and flag position should be confirmed by official government websites.
 ```yaml
 type: entities
 entities:
-  - entity: sensor.flag_protocol
-    name: 🇧🇪 Today's Flag Status
-  - entity: sensor.flag_protocol_next_countdown
-    name: ⏳ Days Until Next Flag Day
+  - entity: sensor.flag_protocol_<country>
+    name: Today's Flag Status
+    attributes:
+    - Reason
+    - Flag type
+  - entity: sensor.flag_protocol_next_countdown_<country>
+    name:  Days Until Next Flag Day
+    attributes:
+    - Next reason
+    - Next flag type
+
 ```

@@ -64,15 +64,9 @@ Dates and flag position should be confirmed by official government websites.
 ```yaml
 type: entities
 entities:
-  - entity: sensor.flag_protocol_<country>
+  - entity: sensor.flag_protocol_[country]
     name: Today's Flag Status
-    attributes:
-    - Reason
-    - Flag type
-  - entity: sensor.flag_protocol_next_countdown_<country>
+  - entity: sensor.flag_protocol_next_countdown_[country]
     name:  Days Until Next Flag Day
-    attributes:
-    - Next reason
-    - Next flag type
 
 ```

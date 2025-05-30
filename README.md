@@ -48,18 +48,18 @@ Dates and flag position should be confirmed by official government websites.
 1. Copy the `custom_components/flag_protocol` folder into your Home Assistant `config/custom_components/` directory.  
 2. Ensure folder structure is:
 config/
-└── custom_components/
-└── flag_protocol/
-├── init.py
-├── manifest.json
-├── config_flow.py
-├── const.py
-├── sensor.py
-└── translations/
-├── en.json
-└── nl.json
-3. Restart Home Assistant.  
-4. Add the integration via **Settings → Devices & Services → Add Integration**.
+ └── custom_components/
+    └── flag_protocol/
+    ├── init.py
+    ├── manifest.json
+    ├── config_flow.py
+    ├── const.py
+    ├── sensor.py
+    └── translations/
+     ├── en.json
+     └── nl.json
+4. Restart Home Assistant.  
+5. Add the integration via **Settings → Devices & Services → Add Integration**.
 
 ---
 

@@ -34,6 +34,7 @@ Dates and flag position should be confirmed by official government websites.
 - 🖼 Dynamic Material Design Icons
 
 ---
+## Installation
 
 ### HACS (recommended)
 
@@ -85,7 +86,8 @@ The integration will prevent you from adding the same country twice.
 ### Flag Status Sensor  
 **Entity:** `sensor.flag_protocol_<country>_main`  
 **State values:**  
-- `full_mast`  
+- `full_mast`
+- `full_mast_with_banner` 
 - `half_mast`  
 - `no_flag`  
 

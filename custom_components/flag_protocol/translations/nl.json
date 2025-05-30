@@ -1,0 +1,32 @@
+{
+  "title": {"main": "Vlagprotocol"},
+  "config": {
+    "title": "Flag Protocol Instellingen",
+    "step": {
+      "user": {
+        "title": "Selecteer land",
+        "data": {"country": "Land"}
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Flag Protocol Opties",
+        "data": {"show_next_countdown": "Toon aftelling naar volgende datum"}
+      }
+    }
+  },
+  "sensor": {
+    "main": {
+      "name": "Vlagstatus {{ country }}",
+      "state": {"normal": "Normaal", "half_mast": "Halve stok"}
+    },
+    "next_countdown": {
+      "name": "Volgende vlagdatum {{ country }}",
+      "state": "{{ days }} dagen"
+    }
+  },
+  "abort": {"already_configured": "Dit land is al ingesteld."},
+  "error": {"unknown": "Onbekende fout opgetreden."}
+}

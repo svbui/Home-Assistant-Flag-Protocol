@@ -1,7 +1,7 @@
 {
   "domain": "flag_protocol",
   "name": "Flag Protocol",
-  "version": "2025.5.3",
+  "version": "2025.5.4",
   "documentation": "https://github.com/svbui/Home-Assistant-Flag-Protocol",
   "requirements": [],
   "dependencies": [],

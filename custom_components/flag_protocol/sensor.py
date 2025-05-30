@@ -1,21 +1,30 @@
-from homeassistant.components.sensor import SensorEntity
-from homeassistant.util import dt as dt_util
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant
 import logging
 
-from .const import DOMAIN, COUNTRIES
+from homeassistant.components.sensor import SensorEntity
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.util import dt as dt_util
+
+from .const import COUNTRIES, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback):
+
+async def async_setup_entry(
+    hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
+):
     fns = hass.data[DOMAIN][entry.entry_id]
     country = entry.data.get("country")
-    async_add_entities([
-        FlagProtocolSensor(hass, fns["get_flag_status"], country, entry.entry_id),
-        NextFlagCountdownSensor(hass, fns["get_next_flag_day"], country, entry.entry_id)
-    ])
+    async_add_entities(
+        [
+            FlagProtocolSensor(hass, fns["get_flag_status"], country, entry.entry_id),
+            NextFlagCountdownSensor(
+                hass, fns["get_next_flag_day"], country, entry.entry_id
+            ),
+        ]
+    )
+
 
 class FlagProtocolSensor(SensorEntity):
     _attr_should_poll = True
@@ -47,12 +56,13 @@ class FlagProtocolSensor(SensorEntity):
             "full_mast": "mdi:flag",
             "half_mast": "mdi:flag-outline",
             "full_mast_with_banner": "mdi:flag-variant",
-            "no_flag": "mdi:flag-off"
+            "no_flag": "mdi:flag-off",
         }
 
         self._attr_native_value = flag_type
         self._attr_icon = icon_map.get(flag_type, "mdi:flag")
         self._attr_extra_state_attributes = {"reason": reason}
+
 
 class NextFlagCountdownSensor(SensorEntity):
     _attr_should_poll = True
@@ -74,5 +84,5 @@ class NextFlagCountdownSensor(SensorEntity):
         self._attr_native_value = days_until
         self._attr_extra_state_attributes = {
             "next_reason": next_reason,
-            "next_flag_type": next_flag_type
+            "next_flag_type": next_flag_type,
         }

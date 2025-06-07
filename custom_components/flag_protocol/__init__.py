@@ -4,7 +4,7 @@ import logging
 from homeassistant.core import HomeAssistant
 from homeassistant.config_entries import ConfigEntry
 
-from .const import DOMAIN
+from .const import COUNTRY_MODULES, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -15,9 +15,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         _LOGGER.error("Flag Protocol: no country specified in entry %s", entry.entry_id)
         return False
 
-    # Dynamically load the country-specific rules module
+# Dynamically load the country-specific rules module
     try:
-        module = importlib.import_module(f"{__package__}.flag_rules.{country}")
+        # Handle 'is' (Iceland) as a special case due to Python reserved keyword
+        module_name = f"{country}_" if country == "is" else country
+        module = importlib.import_module(f"{__package__}.flag_rules.{module_name}")
     except ImportError as err:
         _LOGGER.error("Flag Protocol: could not load flag_rules.%s: %s", country, err)
         return False
@@ -36,7 +38,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     }
 
     # Forward setup to the sensor platform
-    await hass.config_entries.async_forward_entry_setup(entry, "sensor")
+    await hass.config_entries.async_forward_entry_setups(entry, ["sensor", "binary_sensor"])
     return True
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

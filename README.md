@@ -70,26 +70,30 @@ The integration will prevent you from adding the same country twice.
 
 ---
 
-## Entities & Attributes
+### 🧠 Entities Created
 
-### Flag Status Sensor  
-**Entity:** `sensor.flag_protocol_<country>_main`  
-**State values:**  
-- `full_mast`
-- `full_mast_with_banner` 
-- `half_mast`  
-- `no_flag`  
+The **Flag Protocol** integration provides the following entities per configured country:
 
-**Attributes:**  
-- `reason` — Why the flag is at that position (e.g. holiday name, “Flag not lit” when the sun is down).
+#### `sensor.flag_today_<country>`
+- **Description**: Text sensor indicating the current flag status (`full_mast`, `half_mast`, or `no_flag`)
+- **State**: `"full_mast"`, `"half_mast"`, or `"no_flag"`
+- **Attributes**:
+  - `reason`: Description of today's flag status
+  - `icon`: Automatically selected based on status
 
----
+#### `sensor.next_flag_day_countdown_<country>`
+- **Description**: Sensor showing the number of days until the next official flag day.
+- **State**: Integer number of days
+- **Attributes**:
+  - `next_reason`: Description of the next flag day
+  - `next_flag_type`: `"full_mast"` or `"half_mast"`
+  - `next_date_time`: ISO 8601 timestamp of the next flag day
 
-### Next Flag Countdown Sensor  
-**Entity:** `sensor.flag_protocol_<country>_next_countdown`  
-**State:** Number of days until the next flag day.  
+#### `binary_sensor.flag_today_<country>`
+- **Description**: Binary sensor that is `on` when a flag should be flown today, and `off` otherwise.
+- **State**: `on` or `off`
+- **Attributes**:
+  - `flag_type`: `"full_mast"` or `"half_mast"` (if active)
+  - `reason`: Description of the flag day (if active)
 
-**Attributes:**  
-- `next_reason` — Name of the upcoming flag day.  
-- `next_flag_type` — Flag position on that day (`full_mast`, `half_mast`, etc.).
-```
+> ⚠️ Note: `<country>` corresponds to the configured country code (e.g., `nl`, `se`, `no`, etc.).

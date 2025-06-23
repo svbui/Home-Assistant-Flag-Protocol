@@ -11,7 +11,7 @@ The background of this integration is that I found I was not the only one lookin
 ## Assumptions and choices
 Due to almost no countries having a public API for the flag protocol, the dates are hardcoded. Yet due to the setup with a separate file for each country it is still easy to maintain. 
 
-In general I have kept in mind that the flag should only be flown during daylight (expect for when well litt on both sides), as this is the case for most countries. There is however some flexibility to it with a set time instead of relying on `sun.sun` elevation. 
+In general I have kept in mind that the flag should only be flown during daylight (except for when well lit on both sides), as this is the case for most countries. There is however some flexibility to it with a set time instead of relying on `sun.sun` elevation.
 
 Election days are excluded, some countries will allow you to flag during election days (Belgium, Sweden), some don't (The Netherlands). However there is in general no logic to when it is election day.
 

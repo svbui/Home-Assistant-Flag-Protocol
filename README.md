@@ -45,10 +45,10 @@ Dates and flag position should be confirmed by official government websites.
 
 ### Manual
 
-1. Copy the `custom_components/flag_protocol` folder into your Home Assistant `config/custom_components/` directory.  
+1. Copy the `custom_components/flag_protocol` folder into your Home Assistant `config/custom_components/` directory.
 2. Ensure folder structure is correct.
-4. Restart Home Assistant.  
-5. Add the integration via **Settings → Devices & Services → Add Integration**.
+3. Restart Home Assistant.
+4. Add the integration via **Settings → Devices & Services → Add Integration**.
 
 ---
 

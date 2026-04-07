@@ -41,17 +41,20 @@ def get_flag_status(now: datetime) -> tuple[str, str]:
 
     fixed = [
         (1,  1,  "full_mast", "New Year's Day"),
-        (2,  5,  "full_mast", "Crown Princess Mary's Birthday"),
+        (2,  5,  "full_mast", "Queen Mary's Birthday"),
         (2,  6,  "full_mast", "Princess Marie’s Birthday"),
         (4, 16,  "full_mast", "Queen Margrethe II’s Birthday"),
+        (4, 21,  "full_mast", "Princess Isabella's Birthday"),
         (4, 29,  "full_mast", "Princess Benedikte’s Birthday"),
         (5,  5,  "full_mast", "Liberation Day"),
-        (5, 26,  "full_mast", "Crown Prince Frederik’s Birthday"),
+        (5, 26,  "full_mast", "King Frederik’s Birthday"),
         (6,  5,  "full_mast", "Constitution Day"),
         (6,  7,  "full_mast", "Prince Joachim’s Birthday"),
-        (6, 11,  "full_mast", "Prince Henrik’s Birthday"),
         (6, 15,  "full_mast", "Valdemars Day (Dannebrog)"),
+        (6, 21,  "full_mast", "Greenland's National Day (flown with the Greenlandic flag Erfalasorput)"),
+        (7, 29,  "full_mast", "Faroese National Day, Olai Day (flown with the Faroese flag Merkið)"),
         (9,  5,  "full_mast", "Commemoration of Danish Soldiers"),
+        (10, 15, "full_mast", "Crown Prince Christian's Birthday"),
         (12,25,  "full_mast", "Christmas Day"),
     ]
 

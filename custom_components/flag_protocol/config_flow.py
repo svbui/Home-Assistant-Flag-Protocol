@@ -6,7 +6,6 @@ from .const import DOMAIN, COUNTRIES
 class FlagProtocolFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
     """Config flow for Flag Protocol."""
     VERSION = 1
-    CONNECTION_CLASS = config_entries.CONN_CLASS_LOCAL_POLL
 
     def _is_already_configured(self, country: str) -> bool:
         """Check if the given country is already configured."""
